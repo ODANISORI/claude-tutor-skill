@@ -34,7 +34,7 @@ CLAUDE.md               vault rules Claude follows
 
 This repo is private: first accept the collaborator invite from GitHub (check your email or github.com/notifications). Then open **Claude Code** (desktop app or terminal) in any folder and paste:
 
-> Set up the Claude Study Vault for me. Clone https://github.com/ODANISORI/claude-study-vault into a temporary folder, read SETUP.md from the clone, and walk me through it step by step. Ask me before creating, copying or changing anything, and never delete or overwrite my existing files.
+> Set up the Claude Study Vault for me. Clone https://github.com/ODANISORI/claude-tutor-skill into a temporary folder, read SETUP.md from the clone, and walk me through it step by step. Ask me before creating, copying or changing anything, and never delete or overwrite my existing files.
 
 If Claude can't download the repo (login problems), click **Code → Download ZIP** on this page, unzip it, and tell Claude where the folder is. It checks what you have installed, creates the vault (or adds it to your existing one), helps you install the two Obsidian plugins, and sets up your courses.
 
