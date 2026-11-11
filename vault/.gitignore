@@ -1,0 +1,8 @@
+# Obsidian files that change constantly (open tabs, layout, cache)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# macOS
+.DS_Store
