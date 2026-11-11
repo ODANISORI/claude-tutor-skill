@@ -14,13 +14,17 @@ Run these and tell the user what's missing (don't install anything without askin
 
 ## 2. Get the files
 
-Clone the repo into a temporary folder (not into a vault):
+If the user already downloaded the repo (e.g. as a ZIP from GitHub, unzipped), ask for that folder's path and use it as `<clone>`. Otherwise clone it into a temporary folder (not into a vault):
 
 ```bash
 git clone --depth 1 https://github.com/ODANISORI/claude-study-vault.git "<temp folder>/claude-study-vault"
 ```
 
-Read `README.md` from the clone so you know what's in it.
+The repo is **private**: cloning only works if the owner invited the user (GitHub → the invite email or github.com/notifications → Accept) and git is logged in to GitHub. If the clone fails with an authentication error or "Repository not found":
+- Don't keep retrying and never ask for their GitHub password or token in chat.
+- Tell them to either (a) accept the invite, then run the same `git clone` command themselves in a terminal (it opens a GitHub login in the browser), or (b) open https://github.com/ODANISORI/claude-study-vault in the browser while logged in, click **Code → Download ZIP**, unzip it, and tell you the folder path.
+
+Read `README.md` from `<clone>` so you know what's in it.
 
 ## 3. Choose where the vault goes
 
