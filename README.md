@@ -10,7 +10,7 @@ An Obsidian vault plus a set of Claude Code skills that turn your course materia
 | `/quiz <concept>` | 5-8 fresh questions from a **quiz-master** agent, graded by a separate **strict-grader** agent that can't be talked into a pass. Mistakes are logged in the note. |
 | `/tutor <concept>` | Socratic tutoring: guiding questions and a hint ladder instead of answers, ending with an explain-it-back. |
 | `/review` | Spaced repetition: quizzes everything that's due, weakest first. |
-| `/practice <skill>` | For self-taught skills (FL Studio, video editing, drawing, writing for fun): one 10-30 minute exercise at a time with a checklist, feedback from your screenshots or text, four levels from guided to real use. Skill notes need 2 passed exercises to count as mastered. Never used for course material. |
+| `/practice <skill>` | For self-taught skills: one 10-30 minute exercise at a time with a checklist, feedback from your screenshots or text, four levels from guided to real use. Skill notes need 2 passed exercises to count as mastered. Never used for course material. |
 | `/canvas` | Pulls new lectures from **Canvas LMS** and runs `/learn` on them. Your token stays in your OS keychain, never in the vault. |
 
 **The annoying part:** a concept only becomes `mastered` after 3 passed quizzes in a row, spread over at least 3 days, including an explain-it-back and an apply-it-to-something-new question, with no open mistakes. Fail once and it drops back to `shaky` and returns tomorrow.
