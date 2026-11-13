@@ -24,7 +24,7 @@ Progress lives in each note's properties (`status`, `streak`, `next_review`), an
 100 Courses/<Course>/   lecture notes, one folder per course
 200 Concepts/           concept notes you get quizzed on
 300 Outputs/            301 Assignments, 302 Projects, 303 Exam Prep (Study Dashboard), 304 Personal Projects
-400 Life/               401 Cookbook, 402 Personal Context
+400 Life/               401 Personal Context
 900 System/             Templates, Canvas
 Images/                 attachments (slides and PDFs get copied here)
 .claude/                the skills and agents
