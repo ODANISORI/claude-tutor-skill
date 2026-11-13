@@ -6,7 +6,7 @@ An Obsidian vault plus a set of Claude Code skills that turn your course materia
 
 | Command | What it does |
 |---|---|
-| `/learn <topic or file>` | Reads almost anything: PDF, PowerPoint, Word, Excel, e-books, photos of notes or whiteboards, Jupyter notebooks, code, transcripts, web links. If a topic is too broad ("machine learning"), it asks a few narrowing questions first; for a whole skill from zero ("FL Studio") it builds a learning path of modules. Writes a full lecture note and a few broad concept notes, teaches each concept with worked examples, then quizzes you. |
+| `/learn <topic or file>` | Reads almost anything: PDF, PowerPoint, Word, Excel, e-books, photos of notes or whiteboards, Jupyter notebooks, code, transcripts, web links. If a topic is too broad ("machine learning"), it asks a few narrowing questions first; for a whole skill from zero it builds a learning path of modules. Writes a full lecture note and a few broad concept notes, teaches each concept with worked examples, then quizzes you. |
 | `/quiz <concept>` | 5-8 fresh questions from a **quiz-master** agent, graded by a separate **strict-grader** agent that can't be talked into a pass. Mistakes are logged in the note. |
 | `/tutor <concept>` | Socratic tutoring: guiding questions and a hint ladder instead of answers, ending with an explain-it-back. |
 | `/review` | Spaced repetition: quizzes everything that's due, weakest first. |
