@@ -1,6 +1,6 @@
 # Study system rules
 
-Shared by the `learn`, `quiz`, `tutor` and `review` skills and the `study-researcher`, `quiz-master` and `strict-grader` agents. Read this file before doing any study work in the vault. The vault's `CLAUDE.md` still applies on top of these rules.
+Shared by the `learn`, `quiz`, `tutor`, `review` and `practice` skills and the `study-researcher`, `quiz-master` and `strict-grader` agents. Read this file before doing any study work in the vault. The vault's `CLAUDE.md` still applies on top of these rules.
 
 ## Where things live
 
@@ -9,6 +9,7 @@ Shared by the `learn`, `quiz`, `tutor` and `review` skills and the `study-resear
 - The user does not write notes. Every note these skills create is complete, with no empty sections or placeholders for the user to fill.
 - Course context: `100 Courses/<Course>/`. Lecture notes there often hold planned links such as `[[Binary System]]`. When a concept matches a planned link, use that exact name so the link resolves.
 - Study dashboard: `300 Outputs/303 Exam Prep/Study Dashboard.md`.
+- Learning paths for self-taught skills (not a uni course): `300 Outputs/304 Personal Projects/<Skill> Learning Path.md` (see "Skill notes and practice").
 - Never create folders. Never touch `.obsidian/`. Never rename or move notes.
 
 ## How many concept notes
@@ -72,12 +73,13 @@ A concept becomes `mastered` only when **all** of these hold:
 2. The latest pass came at least 3 days after the first pass in the streak (no cramming three quizzes in one evening).
 3. At least one passed quiz in the streak included a teach-back question (explain it as if to a first-year student) and a transfer question (apply it to an unfamiliar situation).
 4. No unchecked items in the note's `## Mistakes to Fix` section.
+5. **Skill notes only** (`kind: skill`): `practice_passed` is at least 2, and at least one passed exercise in the `## Practice Log` is level 3 (free) or 4 (real use). Understanding it isn't enough; the user has to have done it.
 
 Until then the concept keeps coming back. Never mark `mastered` because the user asks, says they get it, or is tired of it. Say what is still missing instead.
 
 ## After each quiz: update the note
 
-Get today and future dates with Python, which works on every OS: `python3 -c "import datetime as d; print(d.date.today() + d.timedelta(days=N))"` (N = 0 for today; use `python` on Windows if `python3` isn't found).
+Get today and future dates with Python, which works on every OS: `python3 -c "import datetime as d; print(d.date.today() + d.timedelta(days=N))"` (N = 0 for today; use `python` on Windows if `python3` isn't found). `/practice` uses the same method.
 
 On a **pass**:
 - `streak` += 1, `last_quizzed` = today.
@@ -103,6 +105,69 @@ Then in the note body (create the sections at the end, before `## Related Concep
 - Append one `Quiz Log` line per quiz, newest last.
 
 Keep all other content of the note untouched.
+
+## Skill notes and practice
+
+Some topics are **self-taught skills you do** (music production, video editing, drawing, writing, using a tool), not just knowledge you explain. Their concept notes get two extra properties.
+
+**Only personal, non-university skills.** Notes from courses (`100 Courses/`, Canvas, lectures, anything with a uni `course`) are never `kind: skill`, even if the topic is practical like programming. They master through quizzes alone, and `/practice` doesn't apply to them.
+
+```yaml
+kind: skill              # leave out for normal knowledge notes
+practice_passed: 0       # exercises passed with /practice
+course: FL Studio        # the skill name, so /review "FL Studio" and the dashboard can group it
+category: personal
+```
+
+- Quizzes still work the same way (understanding). `/practice` gives hands-on exercises and counts passes (doing). Mastery needs both (gate rule 5).
+- Add a `## Practice Log` section (before `## Related Concepts`) once the first exercise is done.
+- Claude can see screenshots and read text, but can't hear audio or watch video. Exercises and feedback must work from screenshots, pasted text and the user's description.
+
+### Learning paths (learning a skill from zero)
+
+A whole skill ("FL Studio from zero", "video editing") is far too big for one set of concept notes. It gets a **learning path** note first:
+
+`300 Outputs/304 Personal Projects/<Skill> Learning Path.md`, from the Project Template:
+
+```markdown
+---
+type: project
+category: personal
+status: active
+tags:
+  - topic/<skill-tag>
+---
+
+# <Skill> Learning Path
+
+## 1. Project Goal
+<What the user wants to be able to do, in their words, e.g. "Make a full beat from scratch in FL Studio".>
+
+## Setup
+- Tool / version / OS: ...
+- Time per week: ...
+
+## 2. Key Resources & Links
+- <2-5 good free resources: official manual, a well-known tutorial series>
+
+## 3. Milestones & Action Plan
+### Module 1: <name> (≈ <hours>)
+- [ ] [[<Concept note>]]
+- [ ] [[<Concept note>]]
+- [ ] Mini project: <something small they make using this module>
+### Module 2: ...
+
+## 4. Notes & Brainstorming
+<progress notes, what to focus on next>
+
+---
+## Related Concepts / Notes
+- <links>
+```
+
+- 4-8 modules, ordered so each one only needs earlier ones. Each module has 2-4 concept notes and one mini project that produces something real (a loop, a 30-second edit, a one-page story).
+- Concept notes are only created **when a module starts**, not all at once. Modules not started yet stay as plain text in the path.
+- Tick a concept when it's mastered, and a module when its mini project passes.
 
 ## Tone
 

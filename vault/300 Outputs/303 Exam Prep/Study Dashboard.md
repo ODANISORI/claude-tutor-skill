@@ -42,6 +42,27 @@ WHERE status = "learning"
 SORT next_review ASC
 ```
 
+## 🎛️ Skills in Practice
+```dataview
+TABLE
+  course AS "Skill",
+  status AS "Status",
+  streak AS "Quiz Streak",
+  practice_passed AS "Exercises Passed"
+FROM "200 Concepts"
+WHERE kind = "skill" AND status != "mastered"
+SORT course ASC, practice_passed ASC
+```
+
+## 🗺️ Learning Paths
+```dataview
+TASK
+FROM "300 Outputs/304 Personal Projects"
+WHERE !completed AND contains(file.name, "Learning Path")
+GROUP BY file.link
+LIMIT 30
+```
+
 ## ✅ Mastered
 ```dataview
 TABLE

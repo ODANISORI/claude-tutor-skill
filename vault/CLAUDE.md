@@ -22,7 +22,7 @@
 - After changing a property, check that the Dataview queries in the dashboards (`300 Outputs/Dashboard.md`, `300 Outputs/303 Exam Prep/Study Dashboard.md`, `400 Life/Cooking Dashboard.md`) still work.
 
 ## Study system
-- Skills `/learn`, `/quiz`, `/tutor`, `/review`, `/canvas` and agents `study-researcher`, `quiz-master`, `strict-grader` live in `.claude/`.
+- Skills `/learn`, `/quiz`, `/tutor`, `/review`, `/practice`, `/canvas` and agents `study-researcher`, `quiz-master`, `strict-grader` live in `.claude/`.
 - Rules (statuses, `streak`, `next_review`, mastery gate) are in `.claude/skills/learn/study-rules.md`. Studied concept notes use those properties; the Study Dashboard queries them.
 - `/canvas` pulls lectures from Canvas LMS. The Canvas token lives only in the OS keychain or a file outside the vault, never in the vault, a note, or the chat.
 
